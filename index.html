@@ -6,7 +6,7 @@
 
 <title>كوزمتك الأمير براند AB</title>
 
-<!-- Font -->
+<!-- Google Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
@@ -38,34 +38,13 @@ body{
 
 /* ===== HEADER ===== */
 header{
-  position:sticky;
-  top:0;
-  background:#120817;
-  z-index:10;
-}
-.bar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px;
-}
-.brand{
   text-align:center;
-}
-.brand .t{font-weight:900;font-size:18px}
-.brand .s{font-size:12px;color:var(--muted)}
-
-.iconBtn{
-  background:rgba(255,255,255,.08);
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:8px 12px;
-  color:#fff;
-  cursor:pointer;
-  font-size:16px;
+  padding:14px;
+  font-size:22px;
+  font-weight:900;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO SLIDER ===== */
 .hero{max-width:1100px;margin:10px auto;padding:10px}
 .heroBox{
   background:var(--card);
@@ -78,12 +57,27 @@ header{
 @media(max-width:800px){
   .heroBox{grid-template-columns:1fr}
 }
-.heroImg{width:100%;max-height:320px;object-fit:contain}
-.heroTitle{font-size:32px;font-weight:900}
-.heroSub{color:var(--muted);margin:8px 0}
+
+.heroImg{
+  width:100%;
+  max-height:320px;
+  object-fit:contain;
+}
+
+.heroTitle{
+  font-size:34px;
+  font-weight:900;
+}
+
+.heroSub{
+  color:var(--muted);
+  margin:8px 0;
+}
+
 .heroBtn{
   background:linear-gradient(135deg,var(--primary),var(--primary2));
-  border:0;color:#fff;
+  border:0;
+  color:#fff;
   padding:12px 18px;
   border-radius:14px;
   font-weight:900;
@@ -100,12 +94,19 @@ header{
 @media(max-width:800px){
   .grid{grid-template-columns:repeat(2,1fr);}
 }
+
 .card{
   background:var(--card);
   border-radius:var(--r);
   padding:10px;
 }
-.img{width:100%;height:160px;object-fit:contain}
+
+.img{
+  width:100%;
+  height:160px;
+  object-fit:contain;
+}
+
 .name{font-weight:900;margin:6px 0}
 .price{color:var(--primary);font-weight:900}
 
@@ -119,10 +120,7 @@ header{
   font-weight:900;
 }
 .btnAdd{background:#333;color:#fff}
-.btnOrder{
-  background:linear-gradient(135deg,var(--primary),var(--primary2));
-  color:#fff;
-}
+.btnOrder{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff}
 
 </style>
 </head>
@@ -130,25 +128,7 @@ header{
 <body>
 
 <header>
-  <div class="bar">
-
-    <div></div>
-
-    <div class="brand">
-      <div class="t">كوزمتك الأمير براند AB</div>
-      <div class="s">عطور • مكياج • عناية • عروض</div>
-    </div>
-
-    <div>
-      <!-- Instagram Icon -->
-      <a href="https://www.instagram.com/alameer.iq1/" target="_blank"
-         class="iconBtn"
-         style="background:linear-gradient(135deg,#ff4fa3,#ff2a84);">
-        📸
-      </a>
-    </div>
-
-  </div>
+كوزمتك الأمير براند AB
 </header>
 
 <!-- ===== SLIDER ===== -->
@@ -172,47 +152,55 @@ header{
 
 <script>
 
-// رابط الشيت
-const SHEET_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQR4CDYOcGSOeHqY-WPr6a-dDdFGqt6f_-wxzTnIjw26haO3oeWZX4AkJ7dqIoBeXKBaNnldf1gu_8x/pub?output=csv";
+// ===== رابط الشيت =====
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQR4CDYOcGSOeHqY-WPr6a-dDdFGqt6f_-wxzTnIjw26haO3oeWZX4AkJ7dqIoBeXKBaNnldf1gu_8x/pub?output=csv";
 
-// رقم واتساب
-const WHATSAPP="9647733949777";
+// ===== رقم واتساب =====
+const WHATSAPP = "9647733949777";
 
-// السلايدر
-const slides=[
- {title:"عطور فاخرة",sub:"أفضل العطور النسائية",img:"https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&w=900"},
- {title:"مكياج",sub:"أحدث الماركات",img:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&w=900"},
- {title:"عناية بالبشرة",sub:"منتجات أصلية",img:"https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&w=900"}
+// ===== SLIDER DATA =====
+const slides = [
+ {title:"عطور فاخرة", sub:"أفضل العطور النسائية", img:"https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&w=900"},
+ {title:"مكياج", sub:"أحدث الماركات", img:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&w=900"},
+ {title:"عناية بالبشرة", sub:"منتجات أصلية", img:"https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&w=900"}
 ];
-let s=0;
+
+let slideIndex=0;
+
 function showSlide(){
-  heroImg.src=slides[s].img;
-  heroTitle.textContent=slides[s].title;
-  heroSub.textContent=slides[s].sub;
-  s=(s+1)%slides.length;
+  const s=slides[slideIndex];
+  heroImg.src=s.img;
+  heroTitle.textContent=s.title;
+  heroSub.textContent=s.sub;
+  slideIndex=(slideIndex+1)%slides.length;
 }
 setInterval(showSlide,4000);
 showSlide();
-heroBtn.onclick=()=>grid.scrollIntoView({behavior:"smooth"});
 
-// CSV بسيط
-function parseCSV(t){
-  const rows=t.trim().split("\n").map(r=>r.split(","));
-  const h=rows.shift();
+heroBtn.onclick=()=>document.getElementById("grid").scrollIntoView({behavior:"smooth"});
+
+// ===== CSV PARSER =====
+function parseCSV(text){
+  const rows=text.trim().split("\n").map(r=>r.split(","));
+  const headers=rows.shift();
   return rows.map(r=>{
     const o={};
-    h.forEach((x,i)=>o[x]=r[i]);
+    headers.forEach((h,i)=>o[h]=r[i]);
     return o;
   });
 }
 
-// تحميل المنتجات
+// ===== LOAD PRODUCTS =====
 fetch(SHEET_URL)
 .then(r=>r.text())
 .then(t=>{
   const data=parseCSV(t);
+  render(data);
+});
+
+function render(products){
   grid.innerHTML="";
-  data.forEach(p=>{
+  products.forEach(p=>{
     if(!p.name) return;
     const d=document.createElement("div");
     d.className="card";
@@ -225,14 +213,20 @@ fetch(SHEET_URL)
     `;
     grid.appendChild(d);
   });
-});
+}
 
-// واتساب
+// ===== CART SIMPLE =====
+let cart=[];
+
+function add(name){
+  cart.push(name);
+  alert("تمت الإضافة");
+}
+
 function order(name){
   const msg=`طلب منتج: ${name}`;
   window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`);
 }
-function add(){ alert("تمت الإضافة"); }
 
 </script>
 
