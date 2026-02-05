@@ -13,6 +13,10 @@
   <meta name="apple-mobile-web-app-title" content="كوزمتك AB">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
   <style>
    :root{
   --bg:#0b0813;
@@ -24,11 +28,9 @@
   --text:#fff7fb;
   --muted:rgba(255,247,251,.75);
 
-  /* أنثوي */
-  --primary:#ff4fa3;   /* وردي قوي */
-  --primary2:#ff2a84;  /* وردي أغمق */
-  --accent:#ffb5d6;    /* وردي فاتح */
-  --cream:#fff1f7;     /* كريمي */
+  --primary:#ff4fa3;
+  --primary2:#ff2a84;
+  --accent:#ffb5d6;
 
   --ok:#18b46b;
 
@@ -37,15 +39,17 @@
 }
 
 
+
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:system-ui,"Segoe UI",Tahoma,Arial;
+      font-family:"Cairo", system-ui,"Segoe UI",Tahoma,Arial;
       color:var(--text);
       background:
-        radial-gradient(900px 520px at 50% -140px, rgba(255,95,162,.24), transparent 60%),
-        radial-gradient(700px 420px at 15% 12%, rgba(255,157,199,.16), transparent 60%),
-        linear-gradient(180deg,var(--bg),var(--bg2));
+  radial-gradient(900px 520px at 50% -140px, rgba(255,79,163,.30), transparent 60%),
+  radial-gradient(700px 420px at 20% 10%, rgba(255,181,214,.18), transparent 60%),
+  linear-gradient(180deg, var(--bg), var(--bg2));
+
       padding-bottom: 96px;
     }
     a{color:inherit;text-decoration:none}
@@ -179,12 +183,15 @@
     @media (max-width: 720px){ .grid{grid-template-columns: repeat(2, 1fr);} }
 
     .card{
-      border:1px solid rgba(255,255,255,.10);
-      background: var(--card);
-      border-radius: var(--r);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  transition: .15s ease;
+}
+.card:hover{ transform: translateY(-1px); }
+
     .posRel{position:relative}
     .img{
       width:100%;
@@ -231,14 +238,16 @@
       font-weight:1000;
     }
     .btn.add{
-      background: rgba(255,95,162,.18);
-      border-color: rgba(255,95,162,.35);
-    }
+  background: rgba(255,79,163,.16);
+  border-color: rgba(255,79,163,.38);
+}
+
     .btn.order{
-      background: linear-gradient(135deg, rgba(24,180,107,.95), rgba(34,197,94,.95));
-      border-color: transparent;
-      color:#fff;
-    }
+  background: linear-gradient(135deg, rgba(255,79,163,.95), rgba(255,42,132,.95));
+  border-color: transparent;
+  color:#fff;
+}
+
 
     .tag{
       position:absolute; top:10px; right:10px;
@@ -285,7 +294,7 @@
       padding:12px 14px;
       font-weight:1000;
       color:#fff;
-      background: linear-gradient(135deg, rgba(255,95,162,.95), rgba(255,47,135,.95));
+      background: linear-gradient(135deg, rgba(255,79,163,.95), rgba(255,42,132,.95));
       display:flex; gap:10px; align-items:center;
       white-space:nowrap;
       pointer-events:none;
