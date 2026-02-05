@@ -1,1002 +1,234 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>كوزمتك الأمير براند AB</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <!-- PWA / Safari -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#ff5fa2">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="كوزمتك AB">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>كوزمتك الأمير براند AB</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <style>
-   :root{
+<style>
+
+/* ===== ثيم أنثوي ===== */
+:root{
   --bg:#0b0813;
   --bg2:#160b22;
-
-  --card:rgba(255,255,255,.08);
-  --line:rgba(255,255,255,.12);
-
   --text:#fff7fb;
-  --muted:rgba(255,247,251,.75);
-
+  --muted:#ffd6e7;
   --primary:#ff4fa3;
   --primary2:#ff2a84;
-  --accent:#ffb5d6;
-
-  --ok:#18b46b;
-
-  --shadow:0 18px 48px rgba(0,0,0,.38);
-  --r:20px;
+  --card:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.15);
+  --r:18px;
 }
 
-
-
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:"Cairo", system-ui,"Segoe UI",Tahoma,Arial;
-      color:var(--text);
-      background:
-  radial-gradient(900px 520px at 50% -140px, rgba(255,79,163,.30), transparent 60%),
-  radial-gradient(700px 420px at 20% 10%, rgba(255,181,214,.18), transparent 60%),
-  linear-gradient(180deg, var(--bg), var(--bg2));
-
-      padding-bottom: 96px;
-    }
-    a{color:inherit;text-decoration:none}
-    button,input,textarea{font-family:inherit}
-
-    /* Header */
-    header{
-      position:sticky; top:0; z-index:50;
-      background: rgba(14,10,26,.78);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-    }
-    .bar{
-      max-width:1200px; margin:auto;
-      padding:10px 12px;
-      display:grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items:center;
-      gap:10px;
-    }
-    .brand{
-      justify-self:center;
-      text-align:center;
-    }
-    .brand .t{
-      font-weight:1000;
-      font-size:18px;
-      line-height:1.1;
-      letter-spacing:.2px;
-      display:flex;
-      gap:8px;
-      align-items:center;
-      justify-content:center;
-    }
-    .spark{
-      width:12px;height:12px;border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, #fff, var(--rose) 35%, var(--pink) 70%, transparent 72%);
-      box-shadow: 0 0 0 6px rgba(255,95,162,.10);
-    }
-    .brand .s{
-      margin-top:3px;
-      font-size:12px;
-      color:var(--muted);
-    }
-    .leftTools,.rightTools{display:flex; gap:8px; align-items:center}
-    .leftTools{justify-self:start}
-    .rightTools{justify-self:end}
-
-    .iconBtn{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-      border-radius:14px;
-      padding:10px 12px;
-      cursor:pointer;
-      display:flex; gap:8px; align-items:center;
-      font-weight:1000;
-      box-shadow: 0 10px 22px rgba(0,0,0,.22);
-      white-space:nowrap;
-    }
-    .badge{
-      min-width:22px; height:22px; border-radius:999px;
-      display:inline-flex; align-items:center; justify-content:center;
-      background: rgba(255,95,162,.20);
-      border: 1px solid rgba(255,95,162,.35);
-      font-size:12px; font-weight:1000;
-    }
-
-    .pill{
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      border-radius:999px;
-      padding:10px 12px;
-      width:min(520px, 92vw);
-      display:flex; gap:10px; align-items:center;
-      margin:0 auto 10px;
-    }
-    .pill input{
-      border:0; outline:0; width:100%;
-      background:transparent; font-size:14px;
-      color:var(--text);
-    }
-    .pill input::placeholder{color: rgba(255,247,251,.60)}
-
-    /* Categories */
-    .catsWrap{
-      max-width:1200px;
-      margin:auto;
-      padding:0 12px 12px;
-      display:flex;
-      gap:8px;
-      align-items:center;
-    }
-    .mini{color: var(--muted); font-size:13px; line-height:1.55;}
-    .cats{
-      max-width:1200px;
-      margin:auto;
-      padding:0 12px 12px;
-      display:flex;
-      gap:8px;
-      overflow:auto;
-    }
-    .catBtn{
-      white-space:nowrap;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-      border-radius:999px;
-      padding:8px 12px;
-      cursor:pointer;
-      font-weight:900;
-      font-size:13px;
-    }
-    .catBtn.active{
-      background: linear-gradient(135deg, rgba(255,95,162,.95), rgba(255,47,135,.95));
-      border-color: rgba(255,95,162,.55);
-    }
-
-    /* Layout */
-    .wrap{max-width:1200px; margin:auto; padding:14px 12px}
-    .secHead{
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      margin:12px 0 10px;
-    }
-    .secHead .h{font-size:16px; font-weight:1000}
-    .secHead .sub{color: var(--muted); font-size:13px}
-
-    /* Grid */
-    .grid{display:grid; gap:12px; grid-template-columns: repeat(4, 1fr);}
-    @media (max-width: 980px){ .grid{grid-template-columns: repeat(3, 1fr);} }
-    @media (max-width: 720px){ .grid{grid-template-columns: repeat(2, 1fr);} }
-
-    .card{
-  border:1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
-  border-radius: var(--r);
-  box-shadow: var(--shadow);
-  overflow:hidden;
-  transition: .15s ease;
-}
-.card:hover{ transform: translateY(-1px); }
-
-    .posRel{position:relative}
-    .img{
-      width:100%;
-      height:160px;
-      object-fit:contain;
-      background: rgba(255,255,255,.06);
-      display:block;
-      cursor:pointer;
-    }
-    @media (max-width: 720px){ .img{height:140px} }
-
-    .p{padding:10px}
-    .name{
-      font-weight:1000;
-      font-size:13.5px;
-      line-height:1.25;
-      min-height:34px;
-      cursor:pointer;
-    }
-    .cat{
-      font-size:12px;
-      color: rgba(255,247,251,.72);
-      margin-top:6px;
-    }
-    .row{
-      display:flex;
-      align-items:baseline;
-      gap:8px;
-      margin-top:10px;
-      flex-wrap:wrap
-    }
-    .price{font-weight:1000; color:#ffe6f2; font-size:14px}
-    .old{font-size:12px; color: rgba(255,247,251,.70); text-decoration:line-through}
-
-    .btnRow{display:flex; gap:8px; margin-top:10px}
-    .btn{
-      flex:1;
-      border-radius:14px;
-      padding:10px 10px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-      cursor:pointer;
-      font-weight:1000;
-    }
-    .btn.add{
-  background: rgba(255,79,163,.16);
-  border-color: rgba(255,79,163,.38);
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Cairo",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 520px at 50% -140px, rgba(255,79,163,.35), transparent 60%),
+    linear-gradient(180deg,var(--bg),var(--bg2));
 }
 
-    .btn.order{
-  background: linear-gradient(135deg, rgba(255,79,163,.95), rgba(255,42,132,.95));
-  border-color: transparent;
-  color:#fff;
-}
-
-
-    .tag{
-      position:absolute; top:10px; right:10px;
-      background:rgba(255,47,135,.95);
-      color:#fff;
-      font-weight:1000;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-    }
-    .tag2{
-      position:absolute; top:10px; left:10px;
-      background:rgba(255,195,226,.92);
-      color:#3a0a22;
-      font-weight:1000;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-    }
-
-    /* Cart bar */
-    .cartBar{
-      position:fixed;
-      left:12px; right:12px; bottom:12px;
-      z-index:60;
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(18,12,32,.88);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 18px 46px rgba(0,0,0,.40);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:12px 12px;
-      cursor:pointer;
-    }
-    .cartBar .sum{display:flex; flex-direction:column; gap:2px; min-width: 140px;}
-    .cartBar .sum .t{font-size:12px; color: rgba(255,247,251,.75)}
-    .cartBar .sum .v{font-weight:1000; font-size:14px}
-    .cartBar .go{
-      border:0;
-      border-radius:14px;
-      padding:12px 14px;
-      font-weight:1000;
-      color:#fff;
-      background: linear-gradient(135deg, rgba(255,79,163,.95), rgba(255,42,132,.95));
-      display:flex; gap:10px; align-items:center;
-      white-space:nowrap;
-      pointer-events:none;
-    }
-    .cartBar .go .b{
-      background: rgba(255,255,255,.20);
-      border: 1px solid rgba(255,255,255,.25);
-      border-radius:999px;
-      padding:2px 8px;
-      font-size:12px;
-      font-weight:1000;
-    }
-
-    /* Drawers */
-    .overlay{position:fixed; inset:0; background:rgba(0,0,0,.55); display:none; z-index:90}
-    .overlay.show{display:block}
-
-    .drawer{
-      position:fixed; top:0; left:0;
-      height:100vh; width:min(440px, 94vw);
-      background: #0b0813;
-      box-shadow: 0 30px 70px rgba(0,0,0,.45);
-      transform: translateX(-110%);
-      transition: .2s ease;
-      z-index:100;
-      display:flex; flex-direction:column;
-      border-right: 1px solid rgba(255,255,255,.10);
-    }
-    .drawer.open{transform:translateX(0)}
-    .dHead{
-      padding:14px;
-      border-bottom:1px solid rgba(255,255,255,.10);
-      display:flex; justify-content:space-between; align-items:center; gap:10px
-    }
-    .dHead .t{font-weight:1000}
-    .x{
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-      border-radius:12px;
-      padding:8px 10px;
-      cursor:pointer;
-      font-weight:1000
-    }
-    .dBody{padding:14px; overflow:auto; flex:1}
-    .dFoot{padding:14px; border-top:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03)}
-
-    .form{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px}
-    .form input, .form textarea{
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:14px;
-      padding:10px 12px;
-      outline:none;
-      font-weight:700;
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-    }
-    .form input::placeholder, .form textarea::placeholder{color: rgba(255,247,251,.65)}
-    .form .full{grid-column:1 / -1}
-    .sumLine{display:flex; justify-content:space-between; color: rgba(255,247,251,.75); font-size:13px; margin-top:6px}
-    .sumLine b{color:var(--text)}
-    .send{
-      width:100%;
-      border:0; cursor:pointer;
-      border-radius:14px;
-      padding:12px 12px;
-      font-weight:1000;
-      background: linear-gradient(135deg, rgba(255,95,162,.95), rgba(255,47,135,.95));
-      color:#fff;
-    }
-    .clear{
-      width:100%;
-      border:1px solid rgba(255,47,135,.25);
-      background: rgba(255,47,135,.08);
-      color: #ffd3e7;
-      border-radius:14px;
-      padding:12px 12px;
-      font-weight:1000;
-      cursor:pointer;
-      margin-top:8px;
-    }
-
-    .cartRow{
-      display:flex; gap:10px;
-      padding:10px 0;
-      border-bottom:1px solid rgba(255,255,255,.10);
-      align-items:flex-start;
-    }
-    .thumb{
-      width:58px; height:58px;
-      border-radius:14px;
-      object-fit:contain;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10)
-    }
-    .cMain{flex:1}
-    .cName{font-weight:1000; font-size:13px}
-    .cMeta{color: rgba(255,247,251,.72); font-size:12px; margin-top:6px}
-    .qty{display:flex; gap:8px; align-items:center; margin-top:8px}
-    .qbtn{
-      width:32px; height:32px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-      cursor:pointer;
-      font-weight:1000
-    }
-
-    /* Product details drawer */
-    #prodDrawer{
-      left:auto; right:0;
-      transform:translateX(110%);
-      border-right:0;
-      border-left:1px solid rgba(255,255,255,.10)
-    }
-    #prodDrawer.open{transform:translateX(0)}
-    .prodImg{
-      width:100%;
-      height:240px;
-      object-fit:contain;
-      background: rgba(255,255,255,.06);
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.10);
-    }
-
-    /* ===== HERO SLIDER ===== */
-.hero{max-width:1200px;margin:14px auto 0;padding:0 12px}
-.heroGrid{
-  display:grid;
-  grid-template-columns: 1.35fr .65fr;
-  gap:12px;
-  align-items:stretch;
-}
-@media (max-width: 900px){
-  .heroGrid{grid-template-columns:1fr}
-}
-
-.heroMain{
-  display:grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap:10px;
+/* ===== HEADER ===== */
+header{
+  text-align:center;
   padding:14px;
-  border-radius: var(--r);
-  overflow:hidden;
-}
-@media (max-width: 900px){
-  .heroMain{grid-template-columns:1fr}
+  font-size:22px;
+  font-weight:900;
 }
 
-.heroMedia{position:relative;min-height:260px;display:flex;align-items:center;justify-content:center}
-.heroBlob{
-  position:absolute;
-  width:min(420px, 85%);
-  height:min(420px, 85%);
-  border-radius:50%;
-  background: radial-gradient(circle at 30% 20%, rgba(255,181,214,.35), rgba(255,79,163,.18), transparent 70%);
-  filter: blur(0px);
-  transform: translateY(6px);
+/* ===== HERO SLIDER ===== */
+.hero{max-width:1100px;margin:10px auto;padding:10px}
+.heroBox{
+  background:var(--card);
+  border-radius:var(--r);
+  padding:16px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
 }
+@media(max-width:800px){
+  .heroBox{grid-template-columns:1fr}
+}
+
 .heroImg{
-  position:relative;
   width:100%;
   max-height:320px;
   object-fit:contain;
-  filter: drop-shadow(0 18px 30px rgba(0,0,0,.28));
-  border-radius: 18px;
 }
 
-.heroText{display:flex;flex-direction:column;justify-content:center;padding:6px 6px 6px 0}
-.heroKicker{color:var(--muted);font-size:14px;margin-bottom:6px}
-.heroTitle{font-size:34px;font-weight:1000;line-height:1.1}
-.heroSub{color:var(--muted);font-size:15px;margin-top:8px}
+.heroTitle{
+  font-size:34px;
+  font-weight:900;
+}
 
-.heroActions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;flex-wrap:wrap}
+.heroSub{
+  color:var(--muted);
+  margin:8px 0;
+}
+
 .heroBtn{
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  border:0;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:14px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+/* ===== PRODUCTS ===== */
+.wrap{max-width:1100px;margin:auto;padding:12px}
+.grid{
+  display:grid;
+  gap:12px;
+  grid-template-columns:repeat(3,1fr);
+}
+@media(max-width:800px){
+  .grid{grid-template-columns:repeat(2,1fr);}
+}
+
+.card{
+  background:var(--card);
+  border-radius:var(--r);
+  padding:10px;
+}
+
+.img{
+  width:100%;
+  height:160px;
+  object-fit:contain;
+}
+
+.name{font-weight:900;margin:6px 0}
+.price{color:var(--primary);font-weight:900}
+
+.btn{
+  width:100%;
+  margin-top:6px;
+  padding:10px;
+  border-radius:12px;
   border:0;
   cursor:pointer;
-  padding:12px 14px;
-  border-radius:14px;
-  font-weight:1000;
-  color:#fff;
-  background: linear-gradient(135deg, rgba(255,79,163,.95), rgba(255,42,132,.95));
-  box-shadow: 0 16px 34px rgba(255,79,163,.20);
+  font-weight:900;
 }
+.btnAdd{background:#333;color:#fff}
+.btnOrder{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff}
 
-.heroDots{display:flex;gap:6px;align-items:center}
-.dot{
-  width:8px;height:8px;border-radius:999px;
-  background: rgba(255,255,255,.25);
-  border:1px solid rgba(255,255,255,.25);
-  cursor:pointer;
-}
-.dot.active{
-  width:18px;
-  background: rgba(255,79,163,.95);
-  border-color: rgba(255,79,163,.60);
-}
-
-.heroSide{display:flex;flex-direction:column;gap:12px}
-.sideCard{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  padding:12px;
-  border-radius: var(--r);
-  cursor:pointer;
-}
-.sideText{display:flex;flex-direction:column;gap:6px}
-.sideTitle{font-weight:1000;font-size:16px}
-.sideLink{color:var(--primary);font-weight:900;font-size:13px}
-.sideImg{
-  width:88px;height:64px;border-radius:14px;
-  object-fit:cover;
-  border:1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.06);
-}
-
-  
-  </style>
+</style>
 </head>
 
 <body>
+
 <header>
-  <div class="bar">
-    <div class="leftTools">
-      <button class="iconBtn" onclick="openCart()">🛒 السلة <span class="badge" id="cartCount">0</span></button>
-    </div>
-
-    <div class="brand">
-      <div class="t"><span class="spark"></span> كوزمتك الأمير براند AB</div>
-      <div class="s">عطور • مكياج • عناية • عروض</div>
-    </div>
-
-    <div class="rightTools">
-      <button class="iconBtn" onclick="scrollToShop()">🛍️ المنتجات</button>
-    </div>
-  </div>
-
-  <div class="pill">
-    🔎
-    <input id="q" placeholder="ابحثي عن منتج..." />
-  </div>
-
-  <div class="catsWrap">
-    <button class="iconBtn" type="button" onclick="toggleCats()">📂 الأقسام</button>
-    <div class="mini">اضغطي لعرض الأقسام</div>
-  </div>
-
-  <div class="cats" id="catsBar" style="display:none"></div>
+كوزمتك الأمير براند AB
 </header>
 
-  <!-- ===== HERO SLIDER (مثل qn-store) ===== -->
+<!-- ===== SLIDER ===== -->
 <section class="hero">
-  <div class="heroGrid">
-    <!-- اليسار/الوسط: السلايدر الكبير -->
-    <div class="heroMain card">
-      <div class="heroMedia">
-        <div class="heroBlob" aria-hidden="true"></div>
-        <img id="heroImg" class="heroImg" src="" alt="" loading="eager">
-      </div>
-
-      <div class="heroText">
-        <div id="heroKicker" class="heroKicker">مجموعة رائعة</div>
-        <div id="heroTitle" class="heroTitle">عنوان</div>
-        <div id="heroSub" class="heroSub">وصف قصير</div>
-
-        <div class="heroActions">
-          <button class="heroBtn" id="heroBtn">عرض المنتجات</button>
-          <div class="heroDots" id="heroDots"></div>
-        </div>
-      </div>
+  <div class="heroBox">
+    <div>
+      <img id="heroImg" class="heroImg">
     </div>
-
-    <!-- اليمين: كروت الأقسام -->
-    <aside class="heroSide">
-      <div class="sideCard card" onclick="pickCat('عطور')">
-        <div class="sideText">
-          <div class="sideTitle">عطور</div>
-          <div class="sideLink">عرض المنتجات</div>
-        </div>
-        <img class="sideImg" src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=220&q=70" alt="">
-      </div>
-
-      <div class="sideCard card" onclick="pickCat('مكياج')">
-        <div class="sideText">
-          <div class="sideTitle">مكياج</div>
-          <div class="sideLink">عرض المنتجات</div>
-        </div>
-        <img class="sideImg" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=220&q=70" alt="">
-      </div>
-
-      <div class="sideCard card" onclick="pickCat('غسولات')">
-        <div class="sideText">
-          <div class="sideTitle">غسولات</div>
-          <div class="sideLink">عرض المنتجات</div>
-        </div>
-        <img class="sideImg" src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=220&q=70" alt="">
-      </div>
-    </aside>
+    <div>
+      <div id="heroTitle" class="heroTitle"></div>
+      <div id="heroSub" class="heroSub"></div>
+      <button id="heroBtn" class="heroBtn">عرض المنتجات</button>
+    </div>
   </div>
 </section>
 
-  
+<!-- ===== PRODUCTS ===== -->
 <div class="wrap">
-  <div class="secHead" id="shopTop">
-    <div>
-      <div class="h">المنتجات</div>
-      <div class="sub" id="status">تحميل...</div>
-    </div>
-  </div>
-
   <div id="grid" class="grid"></div>
 </div>
 
-<div class="cartBar" onclick="openCart()">
-  <div class="sum">
-    <div class="t">إجمالي السلة</div>
-    <div class="v" id="cartSum">0 د.ع</div>
-  </div>
-  <div class="go">
-    فتح السلة <span class="b" id="cartQty">0</span>
-  </div>
-</div>
-
-<div class="overlay" id="overlay" onclick="closeAll()"></div>
-
-<div class="drawer" id="cartDrawer" aria-hidden="true">
-  <div class="dHead">
-    <div class="t">🛒 السلة وإتمام الطلب</div>
-    <button class="x" onclick="closeAll()">إغلاق</button>
-  </div>
-  <div class="dBody" id="cartBody"></div>
-  <div class="dFoot">
-    <div class="sumLine"><span>الإجمالي:</span> <b id="sumNew">0 د.ع</b></div>
-
-    <div class="form">
-      <input id="name" placeholder="الاسم" />
-      <input id="phone" placeholder="رقم الهاتف" />
-      <input id="address" class="full" placeholder="العنوان الكامل + أقرب نقطة" />
-      <textarea id="note" class="full" rows="2" placeholder="ملاحظات (اختياري)"></textarea>
-    </div>
-
-    <button class="send" onclick="sendWhatsApp()">إرسال الطلب واتساب</button>
-    <button class="clear" onclick="clearCart()">تفريغ السلة</button>
-  </div>
-</div>
-
-<div class="drawer" id="prodDrawer" aria-hidden="true">
-  <div class="dHead">
-    <div class="t" id="pTitle">تفاصيل المنتج</div>
-    <button class="x" onclick="closeAll()">إغلاق</button>
-  </div>
-  <div class="dBody" id="pBody"></div>
-</div>
-
 <script>
-  // ✅ رابط الشيت (CSV)
-  const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQR4CDYOcGSOeHqY-WPr6a-dDdFGqt6f_-wxzTnIjw26haO3oeWZX4AkJ7dqIoBeXKBaNnldf1gu_8x/pub?output=csv";
-  // ✅ واتساب: 07733949777 => بصيغة دولية
-  const WHATSAPP_NUMBER = "9647733949777";
 
-  const $ = (id)=>document.getElementById(id);
+// ===== رابط الشيت =====
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQR4CDYOcGSOeHqY-WPr6a-dDdFGqt6f_-wxzTnIjw26haO3oeWZX4AkJ7dqIoBeXKBaNnldf1gu_8x/pub?output=csv";
 
-  const state = {
-    products: [],
-    cats: [],
-    activeCat: "",
-    cart: loadCart()
-  };
+// ===== رقم واتساب =====
+const WHATSAPP = "9647733949777";
 
-  function loadCart(){ try{ return JSON.parse(localStorage.getItem("cart")||"{}"); }catch(e){ return {}; } }
-  function saveCart(){ localStorage.setItem("cart", JSON.stringify(state.cart)); updateCartUI(); }
+// ===== SLIDER DATA =====
+const slides = [
+ {title:"عطور فاخرة", sub:"أفضل العطور النسائية", img:"https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&w=900"},
+ {title:"مكياج", sub:"أحدث الماركات", img:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&w=900"},
+ {title:"عناية بالبشرة", sub:"منتجات أصلية", img:"https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&w=900"}
+];
 
-  function money(n){ return (Number(n)||0).toLocaleString("ar-IQ"); }
-  function esc(s){ return String(s||"").replace(/[&<>"']/g, m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m])); }
+let slideIndex=0;
 
-  // ✅ CSV parser قوي (يدعم الأسطر داخل desc)
-  function parseCSV(text){
-    const rows = [];
-    let row = [];
-    let cur = "";
-    let inQ = false;
+function showSlide(){
+  const s=slides[slideIndex];
+  heroImg.src=s.img;
+  heroTitle.textContent=s.title;
+  heroSub.textContent=s.sub;
+  slideIndex=(slideIndex+1)%slides.length;
+}
+setInterval(showSlide,4000);
+showSlide();
 
-    for(let i=0;i<text.length;i++){
-      const ch = text[i];
-      const next = text[i+1];
+heroBtn.onclick=()=>document.getElementById("grid").scrollIntoView({behavior:"smooth"});
 
-      if(ch === '"'){
-        if(inQ && next === '"'){ cur += '"'; i++; }
-        else{ inQ = !inQ; }
-        continue;
-      }
-      if(ch === "," && !inQ){ row.push(cur); cur=""; continue; }
-      if((ch === "\n" || ch === "\r") && !inQ){
-        if(ch === "\r" && next === "\n") i++;
-        row.push(cur); cur="";
-        if(row.some(v => String(v).trim() !== "")) rows.push(row);
-        row=[];
-        continue;
-      }
-      cur += ch;
-    }
-    row.push(cur);
-    if(row.some(v => String(v).trim() !== "")) rows.push(row);
+// ===== CSV PARSER =====
+function parseCSV(text){
+  const rows=text.trim().split("\n").map(r=>r.split(","));
+  const headers=rows.shift();
+  return rows.map(r=>{
+    const o={};
+    headers.forEach((h,i)=>o[h]=r[i]);
+    return o;
+  });
+}
 
-    const headers = rows.shift().map(h => String(h||"").trim());
-    return rows.map(cols=>{
-      const obj = {};
-      headers.forEach((h,idx)=> obj[h] = (cols[idx] ?? "").toString().trim());
-      return obj;
-    });
-  }
+// ===== LOAD PRODUCTS =====
+fetch(SHEET_URL)
+.then(r=>r.text())
+.then(t=>{
+  const data=parseCSV(t);
+  render(data);
+});
 
-  function toggleCats(){
-    const bar = $("catsBar");
-    const show = (bar.style.display === "none" || !bar.style.display);
-    bar.style.display = show ? "flex" : "none";
-  }
-
-  async function load(){
-    try{
-      const res = await fetch(SHEET_CSV_URL);
-      const text = await res.text();
-      const rows = parseCSV(text);
-
-      state.products = rows
-        .map((r, idx)=>({
-          _i: idx,
-          id: String(r.id||"").trim(),
-          name: (r.name||"").trim(),
-          price: Number(r.price||0),
-          old_price: Number(r.old_price||0),
-          offer: String(r.offer||"").toLowerCase().trim()==="yes",
-          discount_note: (r.discount_note||"").trim(),
-          image: (r.image||"").trim(),
-          category: (r.category||"غير مصنف").trim(),
-          desc: (r.desc||"").toString().trim()
-        }))
-        .filter(p=>p.id && p.name && p.price);
-
-      state.cats = [...new Set(state.products.map(p=>p.category))].sort((a,b)=>a.localeCompare(b,"ar"));
-
-      $("status").textContent = `تم تحميل ${state.products.length} منتج`;
-      renderCatsBar();
-      renderProducts();
-      updateCartUI();
-    }catch(e){
-      $("status").textContent = "فشل التحميل: تأكدي من رابط CSV وأن الشيت منشور.";
-      console.error(e);
-    }
-  }
-
-  function setActiveBtn(container, btn){
-    [...container.children].forEach(x=>x.classList.remove("active"));
-    btn.classList.add("active");
-  }
-
-  function renderCatsBar(){
-    const bar = $("catsBar");
-    bar.innerHTML = "";
-
-    const allBtn = document.createElement("button");
-    allBtn.className = "catBtn" + (!state.activeCat ? " active" : "");
-    allBtn.textContent = "الكل";
-    allBtn.onclick = ()=>{
-      state.activeCat = "";
-      setActiveBtn(bar, allBtn);
-      renderProducts();
-      scrollToShop();
-    };
-    bar.appendChild(allBtn);
-
-    state.cats.forEach(cat=>{
-      const b = document.createElement("button");
-      b.className = "catBtn" + (state.activeCat===cat ? " active" : "");
-      b.textContent = cat;
-      b.onclick = ()=>{
-        state.activeCat = cat;
-        setActiveBtn(bar, b);
-        renderProducts();
-        scrollToShop();
-      };
-      bar.appendChild(b);
-    });
-  }
-
-  function baseFilter(){
-    const q = ($("q").value||"").toLowerCase().trim();
-    const cat = state.activeCat;
-
-    return state.products.filter(p=>{
-      const okC = !cat || p.category===cat;
-      const okQ = !q || p.name.toLowerCase().includes(q) || (p.desc||"").toLowerCase().includes(q);
-      return okC && okQ;
-    });
-  }
-
-  function renderProducts(){
-    const list = baseFilter().sort((a,b)=>a._i-b._i);
-    const grid = $("grid");
-    grid.innerHTML = "";
-
-    list.forEach(p=>{
-      const hasDisc = p.old_price && p.old_price>p.price;
-
-      const card = document.createElement("div");
-      card.className = "card posRel";
-      card.innerHTML = `
-        ${hasDisc ? `<div class="tag">تخفيض</div>` : ``}
-        ${p.offer ? `<div class="tag2">${esc(p.discount_note || "عرض خاص")}</div>` : ``}
-
-        <img class="img" src="${esc(p.image)}" alt="${esc(p.name)}"
-             loading="lazy" decoding="async"
-             onclick="openProduct('${p.id}')" onerror="this.style.display='none'">
-
-        <div class="p">
-          <div class="name" onclick="openProduct('${p.id}')">${esc(p.name)}</div>
-          <div class="cat">${esc(p.category)}</div>
-
-          <div class="row">
-            <div class="price">${money(p.price)} د.ع</div>
-            ${hasDisc ? `<div class="old">${money(p.old_price)} د.ع</div>` : ``}
-          </div>
-
-          <div class="btnRow">
-            <button class="btn add" onclick="addToCart('${p.id}')">إضافة للسلة</button>
-            <button class="btn order" onclick="orderNow('${p.id}')">اطلبي الآن</button>
-          </div>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-
-    if(!list.length){
-      grid.innerHTML = `<div class="mini" style="padding:14px;border:1px solid rgba(255,255,255,.10);border-radius:16px;background:rgba(255,255,255,.06)">
-        لا توجد منتجات مطابقة للبحث/القسم.
-      </div>`;
-    }
-  }
-
-  function openProduct(id){
-    const p = state.products.find(x=>x.id===id);
-    if(!p) return;
-
-    const hasDisc = p.old_price && p.old_price>p.price;
-
-    $("pTitle").textContent = p.name;
-    $("pBody").innerHTML = `
-      <img class="prodImg" src="${esc(p.image)}" loading="lazy" decoding="async"
-           onerror="this.style.display='none'">
-      <div style="margin-top:12px; font-weight:1000; font-size:16px">${esc(p.name)}</div>
-      <div class="mini" style="margin-top:6px">${esc(p.category)}</div>
-
-      <div class="mini" style="
-        margin-top:10px;
-        white-space:pre-wrap;
-        line-height:1.9;
-        font-size:14px;
-        overflow-wrap:anywhere;
-        word-break:break-word;
-      ">${esc(p.desc || "")}</div>
-
-      <div style="margin-top:12px" class="row">
-        <div class="price">${money(p.price)} د.ع</div>
-        ${hasDisc ? `<div class="old">${money(p.old_price)} د.ع</div>` : ``}
-      </div>
-
-      <div class="btnRow" style="margin-top:14px">
-        <button class="btn add" onclick="addToCart('${p.id}')">إضافة للسلة</button>
-        <button class="btn order" onclick="orderNow('${p.id}')">اطلبي الآن</button>
-      </div>
+function render(products){
+  grid.innerHTML="";
+  products.forEach(p=>{
+    if(!p.name) return;
+    const d=document.createElement("div");
+    d.className="card";
+    d.innerHTML=`
+      <img class="img" src="${p.image}">
+      <div class="name">${p.name}</div>
+      <div class="price">${p.price} د.ع</div>
+      <button class="btn btnAdd" onclick="add('${p.name}')">إضافة للسلة</button>
+      <button class="btn btnOrder" onclick="order('${p.name}')">اطلب الآن</button>
     `;
+    grid.appendChild(d);
+  });
+}
 
-    showOverlay(true);
-    $("prodDrawer").classList.add("open");
-  }
+// ===== CART SIMPLE =====
+let cart=[];
 
-  function addToCart(id){
-    state.cart[id] = (state.cart[id]||0) + 1;
-    saveCart();
-  }
-  function orderNow(id){ addToCart(id); openCart(); }
+function add(name){
+  cart.push(name);
+  alert("تمت الإضافة");
+}
 
-  function cartItems(){
-    return Object.entries(state.cart).map(([id,qty])=>{
-      const p = state.products.find(x=>x.id===id);
-      if(!p) return null;
-      return { ...p, qty, lineNew:p.price*qty };
-    }).filter(Boolean);
-  }
+function order(name){
+  const msg=`طلب منتج: ${name}`;
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`);
+}
 
-  function updateCartUI(){
-    const qty = Object.values(state.cart).reduce((a,b)=>a+b,0);
-    $("cartCount").textContent = qty;
-    $("cartQty").textContent = qty;
-
-    const items = cartItems();
-    const sumNew = items.reduce((a,b)=>a+b.lineNew,0);
-    $("cartSum").textContent = `${money(sumNew)} د.ع`;
-    $("sumNew").textContent = `${money(sumNew)} د.ع`;
-  }
-
-  function openCart(){
-    renderCart();
-    showOverlay(true);
-    $("cartDrawer").classList.add("open");
-  }
-
-  function renderCart(){
-    const items = cartItems();
-    const body = $("cartBody");
-
-    if(!items.length){
-      body.innerHTML = `<div class="mini">السلة فارغة.</div>`;
-    }else{
-      body.innerHTML = items.map(it=>`
-        <div class="cartRow">
-          <img class="thumb" src="${esc(it.image)}" loading="lazy" decoding="async"
-               onerror="this.style.display='none'">
-          <div class="cMain">
-            <div class="cName">${esc(it.name)}</div>
-            <div class="cMeta">${money(it.price)} د.ع • عدد: ${it.qty}</div>
-            <div class="qty">
-              <button class="qbtn" onclick="dec('${it.id}')">-</button>
-              <b>${it.qty}</b>
-              <button class="qbtn" onclick="inc('${it.id}')">+</button>
-              <button class="qbtn" style="margin-inline-start:auto" onclick="removeItem('${it.id}')">✕</button>
-            </div>
-          </div>
-        </div>
-      `).join("");
-    }
-
-    const sumNew = items.reduce((a,b)=>a+b.lineNew,0);
-    $("sumNew").textContent = `${money(sumNew)} د.ع`;
-  }
-
-  function inc(id){ state.cart[id]=(state.cart[id]||0)+1; saveCart(); renderCart(); }
-  function dec(id){
-    if(!state.cart[id]) return;
-    state.cart[id]--;
-    if(state.cart[id]<=0) delete state.cart[id];
-    saveCart(); renderCart();
-  }
-  function removeItem(id){ delete state.cart[id]; saveCart(); renderCart(); }
-  function clearCart(){ state.cart={}; saveCart(); renderCart(); }
-
-  function sendWhatsApp(){
-    const items = cartItems();
-    if(!items.length){ alert("السلة فارغة"); return; }
-
-    const name = $("name").value.trim();
-    const phone = $("phone").value.trim();
-    const address = $("address").value.trim();
-    const note = $("note").value.trim();
-
-    if(!name || !phone || !address){
-      alert("اكتبي الاسم + الهاتف + العنوان");
-      return;
-    }
-
-    const sumNew = items.reduce((a,b)=>a+b.lineNew,0);
-
-    let msg = `طلب جديد - كوزمتك الأمير براند AB%0A%0A`;
-    msg += `الاسم: ${encodeURIComponent(name)}%0A`;
-    msg += `الهاتف: ${encodeURIComponent(phone)}%0A`;
-    msg += `العنوان: ${encodeURIComponent(address)}%0A`;
-    if(note) msg += `ملاحظات: ${encodeURIComponent(note)}%0A`;
-    msg += `%0Aالمنتجات:%0A`;
-
-    items.forEach((it,i)=>{
-      const line = `${i+1}) ${it.name} | عدد: ${it.qty} | سعر: ${it.price} | مجموع: ${it.lineNew}`;
-      msg += `${encodeURIComponent(line)}%0A`;
-    });
-
-    msg += `%0Aالإجمالي: ${sumNew}%0A`;
-
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
-  }
-
-  function showOverlay(on){
-    const o=$("overlay");
-    if(on) o.classList.add("show");
-    else o.classList.remove("show");
-  }
-  function closeAll(){
-    showOverlay(false);
-    $("cartDrawer").classList.remove("open");
-    $("prodDrawer").classList.remove("open");
-  }
-  function scrollToShop(){ $("shopTop").scrollIntoView({behavior:"smooth"}); }
-
-  $("q").addEventListener("input", renderProducts);
-
-  // ✅ تشغيل Service Worker لزيادة السرعة
-  if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("sw.js").catch(()=>{});
-  }
-
-  load();
 </script>
+
 </body>
 </html>
