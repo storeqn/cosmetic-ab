@@ -420,6 +420,101 @@
       border-radius: 18px;
       border: 1px solid rgba(255,255,255,.10);
     }
+
+    /* ===== HERO SLIDER ===== */
+.hero{max-width:1200px;margin:14px auto 0;padding:0 12px}
+.heroGrid{
+  display:grid;
+  grid-template-columns: 1.35fr .65fr;
+  gap:12px;
+  align-items:stretch;
+}
+@media (max-width: 900px){
+  .heroGrid{grid-template-columns:1fr}
+}
+
+.heroMain{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:10px;
+  padding:14px;
+  border-radius: var(--r);
+  overflow:hidden;
+}
+@media (max-width: 900px){
+  .heroMain{grid-template-columns:1fr}
+}
+
+.heroMedia{position:relative;min-height:260px;display:flex;align-items:center;justify-content:center}
+.heroBlob{
+  position:absolute;
+  width:min(420px, 85%);
+  height:min(420px, 85%);
+  border-radius:50%;
+  background: radial-gradient(circle at 30% 20%, rgba(255,181,214,.35), rgba(255,79,163,.18), transparent 70%);
+  filter: blur(0px);
+  transform: translateY(6px);
+}
+.heroImg{
+  position:relative;
+  width:100%;
+  max-height:320px;
+  object-fit:contain;
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,.28));
+  border-radius: 18px;
+}
+
+.heroText{display:flex;flex-direction:column;justify-content:center;padding:6px 6px 6px 0}
+.heroKicker{color:var(--muted);font-size:14px;margin-bottom:6px}
+.heroTitle{font-size:34px;font-weight:1000;line-height:1.1}
+.heroSub{color:var(--muted);font-size:15px;margin-top:8px}
+
+.heroActions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;flex-wrap:wrap}
+.heroBtn{
+  border:0;
+  cursor:pointer;
+  padding:12px 14px;
+  border-radius:14px;
+  font-weight:1000;
+  color:#fff;
+  background: linear-gradient(135deg, rgba(255,79,163,.95), rgba(255,42,132,.95));
+  box-shadow: 0 16px 34px rgba(255,79,163,.20);
+}
+
+.heroDots{display:flex;gap:6px;align-items:center}
+.dot{
+  width:8px;height:8px;border-radius:999px;
+  background: rgba(255,255,255,.25);
+  border:1px solid rgba(255,255,255,.25);
+  cursor:pointer;
+}
+.dot.active{
+  width:18px;
+  background: rgba(255,79,163,.95);
+  border-color: rgba(255,79,163,.60);
+}
+
+.heroSide{display:flex;flex-direction:column;gap:12px}
+.sideCard{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:12px;
+  border-radius: var(--r);
+  cursor:pointer;
+}
+.sideText{display:flex;flex-direction:column;gap:6px}
+.sideTitle{font-weight:1000;font-size:16px}
+.sideLink{color:var(--primary);font-weight:900;font-size:13px}
+.sideImg{
+  width:88px;height:64px;border-radius:14px;
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+}
+
+  
   </style>
 </head>
 
@@ -453,6 +548,58 @@
   <div class="cats" id="catsBar" style="display:none"></div>
 </header>
 
+  <!-- ===== HERO SLIDER (مثل qn-store) ===== -->
+<section class="hero">
+  <div class="heroGrid">
+    <!-- اليسار/الوسط: السلايدر الكبير -->
+    <div class="heroMain card">
+      <div class="heroMedia">
+        <div class="heroBlob" aria-hidden="true"></div>
+        <img id="heroImg" class="heroImg" src="" alt="" loading="eager">
+      </div>
+
+      <div class="heroText">
+        <div id="heroKicker" class="heroKicker">مجموعة رائعة</div>
+        <div id="heroTitle" class="heroTitle">عنوان</div>
+        <div id="heroSub" class="heroSub">وصف قصير</div>
+
+        <div class="heroActions">
+          <button class="heroBtn" id="heroBtn">عرض المنتجات</button>
+          <div class="heroDots" id="heroDots"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- اليمين: كروت الأقسام -->
+    <aside class="heroSide">
+      <div class="sideCard card" onclick="pickCat('عطور')">
+        <div class="sideText">
+          <div class="sideTitle">عطور</div>
+          <div class="sideLink">عرض المنتجات</div>
+        </div>
+        <img class="sideImg" src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=220&q=70" alt="">
+      </div>
+
+      <div class="sideCard card" onclick="pickCat('مكياج')">
+        <div class="sideText">
+          <div class="sideTitle">مكياج</div>
+          <div class="sideLink">عرض المنتجات</div>
+        </div>
+        <img class="sideImg" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=220&q=70" alt="">
+      </div>
+
+      <div class="sideCard card" onclick="pickCat('غسولات')">
+        <div class="sideText">
+          <div class="sideTitle">غسولات</div>
+          <div class="sideLink">عرض المنتجات</div>
+        </div>
+        <img class="sideImg" src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=220&q=70" alt="">
+      </div>
+    </aside>
+  </div>
+</section>
+
+  
 <div class="wrap">
   <div class="secHead" id="shopTop">
     <div>
